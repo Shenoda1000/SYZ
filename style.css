@@ -38,11 +38,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 30px;
+    padding: 20px 30px;
     margin-bottom: 50px;
     background-color: #333;
     animation: slide-in 1s ease-out;
     position: relative;
+}
+
+.logo {
+    height: 60px; /* تغيير الحجم حسب الحاجة */
+    filter: brightness(0) invert(1); /* إذا كان الشعار بحاجة إلى عكس اللون */
 }
 
 header h1 {
