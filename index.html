@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shenoda - Front-End Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>SYZ</h1>
+        <div class="burger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="profile-container">
+            <div class="profile-bg"></div>
+            <img src="shenoda.png" alt="Profile Picture" class="profile-pic">
+        </div>
+        <div class="about-text">
+            <p>I am Shenoda, a Front-End Developer...</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Poorsh.Gamer?mibextid=ZbWKwL" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/shenoda.yohana?igsh=YzljYTk1ODg3Zg==‎‏" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+                <a href="https://wa.me/qr/4TJKCLLOXK5HE1" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <button onclick="window.open('your_cv_link.pdf', '_blank')">Download CV</button>
+        </div>
+    </section>
+
+<!-- رابط Swiper CSS -->
+<div class="projects-container"id="projects">
+    <div class="projects">
+        <div class="project-card">
+            <img src="kero_mena_website.jpg" alt="Project 1">
+            <h3>Kero Mena Website</h3>
+            <p>this is a photographer's website</p>
+            <button onclick="window.location.href='https://shenoda1000.github.io/kero_mena';">Show Project</button>
+        </div>
+        <div class="project-card">
+            <img src="elashwal_website.png" alt="Project 2">
+            <h3>Elashwal Website</h3>
+            <p>this ia a tailor's website</p>
+            <button onclick="window.location.href='https://shenoda1000.github.io/elashwal';">Show Project</button>
+        </div>
+        <div class="project-card">
+            <img src="shenoda_website.jpg" alt="Project 3">
+            <h3>Contact with me</h3>
+            <p>Contact with me by social media</p>
+            <button onclick="window.location.href='https://shenoda1000.github.io/shenoda_website';">Show Project</button>
+        </div>
+        <!-- أضف المزيد من بطاقات المشاريع هنا -->
+    </div>
+</div>
+    
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Shenoda. All rights reserved.</p>
+            <p>Designed by Shenoda, Front-End Developer.</p>
+            <p><a href="https://shenoda1000.github.io/shenoda_website">Contact Me</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
