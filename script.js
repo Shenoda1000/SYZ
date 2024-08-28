@@ -44,15 +44,3 @@ function scrollToSection(sectionId) {
     closeMenu();
 }
 
-const projectsContainer = document.querySelector('.projects-container');
-
-projectsContainer.addEventListener('scroll', () => {
-    const maxScrollLeft = projectsContainer.scrollWidth - projectsContainer.clientWidth;
-
-    // منع التحرك خارج حدود البطاقات
-    if (projectsContainer.scrollLeft < 0) {
-        projectsContainer.scrollLeft = 0;
-    } else if (projectsContainer.scrollLeft > maxScrollLeft) {
-        projectsContainer.scrollLeft = maxScrollLeft;
-    }
-});
