@@ -1,23 +1,48 @@
-// Burger Menu Toggle
 function toggleMenu() {
     const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    const burger = document.querySelector('.burger-menu');
+    
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        menu.classList.add('hide');
+    } else {
+        menu.classList.remove('hide');
+        menu.classList.add('show');
+    }
+
+    burger.classList.toggle('active');
 }
+
+// إغلاق القائمة عند الضغط خارجها
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    const burger = document.querySelector('.burger-menu');
+    const isClickInside = menu.contains(event.target) || burger.contains(event.target);
+    
+    if (!isClickInside && menu.classList.contains('show')) {
+        closeMenu();
+    }
+});
 
 function closeMenu() {
     const menu = document.getElementById('menu');
-    menu.style.display = 'none';
+    const burger = document.querySelector('.burger-menu');
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        menu.classList.add('hide');
+    }
+    burger.classList.remove('active');
 }
 
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-    const menu = document.getElementById('menu');
-    const burgerMenu = document.querySelector('.burger-menu');
+function scrollToSection(sectionId) {
+    // التمرير للأعلى بسرعة
+    window.scrollTo({
+        top: document.querySelector(sectionId).offsetTop,
+        behavior: 'smooth'
+    });
     
-    if (!burgerMenu.contains(event.target) && !menu.contains(event.target)) {
-        menu.style.display = 'none';
-    }
-});
+    closeMenu();
+}
 
 
 
