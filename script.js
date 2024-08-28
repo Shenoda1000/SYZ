@@ -44,5 +44,24 @@ function scrollToSection(sectionId) {
     closeMenu();
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const projectsContainer = document.querySelector(".projects-container");
+    const projects = document.querySelector(".projects");
+    const projectCards = document.querySelectorAll(".project-card");
 
+    let totalWidth = 0;
+
+    projectCards.forEach(card => {
+        const style = window.getComputedStyle(card);
+        const marginRight = parseFloat(style.marginRight);
+        totalWidth += card.offsetWidth + marginRight;
+    });
+
+    // إذا كان العرض الإجمالي للبطاقات أقل من عرض الحاوية (الشاشة)
+    if (totalWidth < projectsContainer.offsetWidth) {
+        projects.style.justifyContent = "center";
+    } else {
+        projects.style.justifyContent = "flex-start";
+    }
+});
 
