@@ -224,9 +224,10 @@ header h1 {
 
 /* Projects Section */
 .projects-container {
-    overflow-x: auto;
+    overflow-x: scroll;
     white-space: nowrap;
     padding: 20px;
+    scroll-behavior: smooth; /* لتسهيل الحركة */
 }
 
 .projects {
@@ -245,6 +246,7 @@ header h1 {
     vertical-align: top;
     width: 245px;
     text-align: center;
+    scroll-snap-align: start; /* لتثبيت البطاقة عند حافة الحاوية */
 }
 
 .project-card img {
@@ -279,19 +281,9 @@ header h1 {
     background-color: #ff00ff;
 }
 
-/* تعريف حركة التمرير */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* إيقاف الحركة عند التمرير فوق الحاوية */
-.projects:hover .project-wrapper {
-    animation-play-state: paused;
+/* إضافة scroll-snap-type لجعل البطاقات تلتقط الحافة عند التمرير */
+.projects-container {
+    scroll-snap-type: x mandatory;
 }
 /* Footer */
 footer {
