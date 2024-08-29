@@ -239,8 +239,10 @@ header h1 {
 }
 
 /* Projects Section */
+/* الكود الحالي */
+
 .cards-wrapper {
-    width: 90%; /* عرض 80% من الشاشة في الشاشات الصغيرة */
+    width: 90%; /* عرض 90% من الشاشة في الشاشات الصغيرة */
     max-width: 1200px; /* أقصى عرض يمكن أن يصل إليه العنصر */
     overflow-x: auto;
     padding: 20px 0;
@@ -248,25 +250,19 @@ header h1 {
     scroll-behavior: smooth;
     margin: 0 auto 25px auto; /* توسيط العنصر أفقياً */
 }
-@media (min-width: 720px) { /* يمكنك تغيير الحجم حسب الحاجة */
-    .card {
-    background-color: #1f1f1f;
-    border: 1px solid #333;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease-in-out;
-    flex-shrink: 0;
-}
 
-}
 /* شاشات العرض الكبيرة */
 @media (min-width: 1024px) { /* يمكنك تغيير الحجم حسب الحاجة */
     .cards-wrapper {
-        width: 75%; /* عرض 300px في الشاشات الكبيرة */
-        max-width:1500px;
+        width: 75%; /* عرض 75% في الشاشات الكبيرة */
+        max-width: 1500px;
+    }
+}
+
+/* شاشات العرض الصغيرة جداً */
+@media (max-width: 480px) { /* يمكنك تغيير الحجم حسب الحاجة */
+    .card {
+        width: 90%; /* عرض البطاقة 90% من عرض الشاشة في الشاشات الصغيرة جداً */
     }
 }
 
@@ -296,7 +292,7 @@ header h1 {
 .card img {
     width: 250px;
     height: 250px;
-    margin-top:20px;
+    margin-top: 20px;
     border-radius: 5px 5px 0px 0px;
 }
 
@@ -336,7 +332,6 @@ header h1 {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
-
 
 /* Footer */
 footer {
