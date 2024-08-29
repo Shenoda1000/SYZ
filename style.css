@@ -189,7 +189,18 @@ header h1 {
         margin-right: 40px;
         margin-left: auto;
     }
-
+    .about img.profile-pic{
+       width: 80%;
+}
+    .about .profile-bg {
+    background-color: #00ff00;
+    width: 80%;
+    height: 72%;
+    border-radius: 50% 50% 10% 50% / 10% 50% 50% 50%;
+    position: absolute;
+    top: 60px;
+    z-index: -1;
+}
     .about .about-text {
         text-align: left;
         order: 2;
