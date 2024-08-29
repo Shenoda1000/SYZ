@@ -157,8 +157,9 @@ header h1 {
 
 .about .profile-bg {
     background-color: #00ff00;
-    width: 300px;
-    height: 300px;
+    width: 80%;
+    height: 80%;
+    margin: auto 10%;
     border-radius: 50% 50% 10% 50% / 10% 50% 50% 50%;
     position: absolute;
     top: 30px;
@@ -166,7 +167,8 @@ header h1 {
 }
 
 .about img.profile-pic {
-    width: 280px;
+    width: 80%;
+    margin: auto 10%;
     border-radius: 50%;
     animation: float 3s ease-in-out infinite;
 }
@@ -191,7 +193,9 @@ header h1 {
     }
     .about img.profile-pic{
        width: 80%;
+        margin: auto 10%;
 }
+    
     .about .profile-bg {
     background-color: #00ff00;
     width: 80%;
