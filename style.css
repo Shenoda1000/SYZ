@@ -248,7 +248,20 @@ header h1 {
     scroll-behavior: smooth;
     margin: 0 auto 25px auto; /* توسيط العنصر أفقياً */
 }
+@media (min-width: 720px) { /* يمكنك تغيير الحجم حسب الحاجة */
+    .card {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    flex-shrink: 0;
+}
 
+}
 /* شاشات العرض الكبيرة */
 @media (min-width: 1024px) { /* يمكنك تغيير الحجم حسب الحاجة */
     .cards-wrapper {
