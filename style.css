@@ -259,13 +259,6 @@ header h1 {
     }
 }
 
-/* شاشات العرض الصغيرة جداً */
-@media (max-width: 480px) { /* يمكنك تغيير الحجم حسب الحاجة */
-    .card {
-        width: 90%; /* عرض البطاقة 90% من عرض الشاشة في الشاشات الصغيرة جداً */
-    }
-}
-
 .cards-container {
     display: flex;
     flex-wrap: nowrap;
