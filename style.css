@@ -258,22 +258,6 @@ header h1 {
         max-width: 1500px;
     }
 }
-@media (min-width: 480px) { /* يمكنك تغيير الحجم حسب الحاجة */
-    .card {
-        width: 200px;
-    }
-    .card img {
-    width: 150px;
-    height: 150px;
-}
-    .card h2 {
-    font-size: 20px;
-}
-
-.card p {
-    font-size: 12px;
-}
-}
 
 .cards-container {
     display: flex;
@@ -342,6 +326,36 @@ header h1 {
     scrollbar-width: none;  /* Firefox */
 }
 
+
+/* Media Query for Very Small Screens */
+@media (max-width: 480px) {
+    .card {
+        width: 200px; /* تقليل عرض البطاقة */
+        margin: 0 auto; /* توسيط البطاقات أفقياً */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* تقليل الظل */
+    }
+
+    .card img {
+        width: 190px; /* تقليل عرض الصورة */
+        height: 190px; /* تقليل ارتفاع الصورة */
+    }
+
+    .card h2 {
+        font-size: 20px; /* تقليل حجم النص */
+        margin: 10px 0; /* تقليل المسافة بين النص */
+    }
+
+    .card p {
+        font-size: 14px; /* تقليل حجم النص */
+        margin: 0 10px 10px; /* تقليل الهوامش */
+    }
+
+    .card button {
+        padding: 8px 15px; /* تقليل حجم الزر */
+        font-size: 14px; /* تقليل حجم النص داخل الزر */
+        margin-bottom: 10px; /* تقليل المسافة السفلية للزر */
+    }
+}
 /* Footer */
 footer {
     text-align: center;
