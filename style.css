@@ -258,6 +258,22 @@ header h1 {
         max-width: 1500px;
     }
 }
+@media (min-width: 480px) { /* يمكنك تغيير الحجم حسب الحاجة */
+    .card {
+        width: 200px;
+    }
+    .card img {
+    width: 150px;
+    height: 150px;
+}
+    .card h2 {
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 12px;
+}
+}
 
 .cards-container {
     display: flex;
