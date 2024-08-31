@@ -44,3 +44,16 @@ function scrollToSection(sectionId) {
     closeMenu();
 }
 
+
+
+window.addEventListener('scroll', function() {
+    const skillsSection = document.getElementById('skills');
+    const skillsPosition = skillsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.5;
+
+    if(skillsPosition < screenPosition) {
+        document.querySelectorAll('.skill-level').forEach(skill => {
+            skill.style.width = skill.style.getPropertyValue('--skill-width');
+        });
+    }
+});
