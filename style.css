@@ -1,10 +1,10 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #111;
-    color: #fff;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
 /* Animations */
@@ -354,6 +354,117 @@ header h1 {
         padding: 8px 15px; /* تقليل حجم الزر */
         font-size: 14px; /* تقليل حجم النص داخل الزر */
         margin-bottom: 10px; /* تقليل المسافة السفلية للزر */
+    }
+}
+
+/* Section Styling */
+.skills-section {
+    padding: 60px 20px;
+    background-color: #282828;
+    text-align: center;
+    border-top: 5px solid #00ff00;
+    border-bottom: 5px solid #00ff00;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #00ff00; /* Neon green */
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #00ff00;
+    margin: 20px auto 0;
+}
+
+/* Skill Grid Styling */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+/* Skill Item Styling */
+.skill-item {
+    width: 100%;
+    max-width: 300px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Skill Icon Styling */
+.skill-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0px;
+}
+
+/* Skill Bar Styling */
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #00ff00;
+    width: 0;
+    border-radius: 5px;
+    animation: loadSkill 2s ease-in-out forwards;
+}
+
+/* Keyframes for loading the skill bar */
+@keyframes loadSkill {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--skill-width);
+    }
+}
+
+/* Skill Text Styling */
+.skill-item h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #00ff00; /* Neon green */
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skill-item {
+        padding: 15px;
+    }
+
+    .skill-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-item h3 {
+        font-size: 1rem;
     }
 }
 /* Footer */
