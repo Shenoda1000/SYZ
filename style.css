@@ -470,7 +470,6 @@ header h1 {
 @media (max-width: 480px) {
     .skill-item {
     width: 80%;
-    
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
@@ -480,13 +479,31 @@ header h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
     
+    .skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #00ff00;
+    width: 0;
+    border-radius: 5px;
+    animation: loadSkill 2s ease-in-out forwards;
+}
 /* Skill Icon Styling */
 .skill-icon img {
     width: 40px;
     height: 40px;
     margin-bottom: 0px;
 }
-    
+    .skill-item h3 {
+        font-size: 0.8rem;
+    }
 }
 /* Footer */
 footer {
