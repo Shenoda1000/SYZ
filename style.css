@@ -558,6 +558,7 @@ header h1 {
     .skill-item {
         flex-direction: column; /* تكديس الأيقونة والنص بشكل عمودي */
         text-align: center;
+        width: 150px;
     }
 
     .skill-icon {
