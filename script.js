@@ -57,3 +57,13 @@ window.addEventListener('scroll', function() {
         });
     }
 });
+
+
+
+// التبديل بين الوضع الفاتح والداكن
+const themeToggleBtn = document.getElementById('themeToggle');
+const bodyElement = document.body;
+
+themeToggleBtn.addEventListener('click', () => {
+    bodyElement.classList.toggle('light-theme');
+});
