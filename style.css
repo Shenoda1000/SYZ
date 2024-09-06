@@ -554,6 +554,21 @@ header h1 {
     text-transform: uppercase;
 }
 
+@media (max-width: 480px) {
+    .skill-item {
+        flex-direction: column; /* تكديس الأيقونة والنص بشكل عمودي */
+        text-align: center;
+    }
+
+    .skill-icon {
+        width: 100%; /* تضع الأيقونة فوق النص */
+        margin-bottom: 10px;
+    }
+
+    .skill-text {
+        width: 100%; /* النص يمتد على كامل عرض العنصر */
+    }
+}
 /* Footer */
 footer {
     text-align: center;
