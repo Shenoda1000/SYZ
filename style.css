@@ -94,6 +94,7 @@ header h1 {
     border-radius: 8px;
     z-index: 1;
     animation: fadeIn 0.5s ease forwards;
+    border: 2px solid #00ff00;
 }
 
 .menu ul {
@@ -140,6 +141,117 @@ header h1 {
     animation: fadeOut 0.5s ease forwards;
     display: none;
 }
+
+
+
+/* Light Theme Styles */
+.themeToggle {
+    height: 40px;
+    width:  auto;
+    border: 2px black solid; 
+    border-radius: 10px;
+    background-color: white;
+    
+}
+/* General */
+.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header */
+.light-theme header {
+    background-color: #f1f1f1;
+    color: #000;
+    border-bottom: 2px solid black;
+}
+.light-theme .logo{
+    filter: hue-rotate(90deg);
+}
+/* Burger Menu */
+.light-theme .burger-menu span {
+    background-color: #000;
+}
+
+.light-theme .menu {
+    background-color: #f5f5f5;
+    border: 2px black solid;
+}
+
+.light-theme .menu ul li a {
+    color: black;
+}
+
+/* About Section */
+.light-theme .about button {
+    background-color: black;
+    color: white;
+}
+
+.light-theme .about button:hover {
+    background-color: grey;
+}
+
+.light-theme .about .profile-bg {
+    background-color: black;
+}
+
+/* Cards Section */
+.light-theme .cards-wrapper {
+    background-color: white;
+}
+
+.light-theme .card {
+    background-color: #f1f1f1;
+    color: #000;
+    border: 2px solid black;
+}
+.light-theme .card p {
+    color: gray;
+}
+.light-theme .card button {
+    background-color: black;
+    color: white;
+}
+
+.light-theme .card button:hover {
+    background-color: grey;
+}
+
+/* Skills Section */
+.light-theme .skills-section {
+    background-color: #f1f1f1;
+    color: #000;
+    border: 2px solid black;
+}
+
+.light-theme .skill-item {
+    background-color: #ffffff;
+    border: 2px solid black;
+}
+
+.light-theme .skills-section h2,
+.light-theme .skills-section h3,
+.light-theme .card h2 {
+    color: black;
+}
+
+/* Section Titles */
+.light-theme .section-title::after {
+    background-color: black;
+}
+
+
+/* Footer */
+.light-theme footer{
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+.light-theme .footer-content a {
+    color: #000;
+}
+
 
 /* About Section */
 .about {
@@ -268,7 +380,7 @@ header h1 {
 
 .card {
     background-color: #1f1f1f;
-    border: 1px solid #333;
+    border: 2px solid #00ff00;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
@@ -285,7 +397,7 @@ header h1 {
 .card img {
     width: 250px;
     height: 250px;
-    margin-top: 20px;
+    margin-top: 5px;
     border-radius: 5px 5px 0px 0px;
 }
 
@@ -298,7 +410,7 @@ header h1 {
 .card p {
     font-size: 16px;
     color: #bbbbbb;
-    margin: 0 10px 15px;
+    margin:  10px 15px;
 }
 
 .card button {
@@ -411,7 +523,7 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center; /* لجعل النص يبدأ من اليسار */
-    gap: 20px; /* مسافة بين الصورة والنص */
+    border: #00ff00 2px solid;
 }
 
 .skill-item:hover {
@@ -421,7 +533,7 @@ header h1 {
 
 /* Skill Icon Styling */
 .skill-icon {
-    width: 25%; /* تأخذ الصورة 25% من عرض العنصر */
+    width: 15%; /* تأخذ الصورة 25% من عرض العنصر */
 }
 
 .skill-icon img {
@@ -432,7 +544,7 @@ header h1 {
 
 /* Skill Text Styling */
 .skill-text {
-    width: 75%; /* النص يأخذ 75% من المساحة المتبقية */
+    width: 85%; /* النص يأخذ 75% من المساحة المتبقية */
 }
 
 .skill-item h3 {
