@@ -36,13 +36,16 @@ body {
 /* Header */
 header {
     display: flex;
+    width: calc(100% - 50px); /* استبدل 50px بعرض القائمة الفعلي */
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
     margin-bottom: 50px;
     background-color: #333;
     animation: slide-in 1s ease-out;
-    position: relative;
+    position: fixed;
+    z-index: 9999;
+    /* قم بإضافة خصائص إضافية هنا حسب الحاجة */
 }
 
 .logo {
@@ -55,104 +58,236 @@ header h1 {
     font-weight: bold;
 }
 
-.burger-menu {
-    cursor: pointer;
-    z-index: 2;
-    position: relative;
-    width: 30px;
-    height: 30px;
-}
-
-.burger-menu span {
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    margin: 5px 0;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.burger-menu.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.burger-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
+/* تنسيق القائمة الجانبية (Burger Menu) */
+/* تنسيق القائمة الجانبية (Burger Menu) */
 .menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 1;
-    animation: fadeIn 0.5s ease forwards;
-    border: 2px solid #00ff00;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px; /* عرض القائمة */
+    height: 100vh; /* ارتفاع القائمة ليغطي الشاشة بالكامل */
+    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+    color: white;
+    transform: translateX(100%); /* بدء القائمة مخفية خارج الشاشة */
+    transition: transform 0.3s ease-in-out, background 0.4s ease; /* تحسين الانتقال */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* ظل للقائمة */
+    z-index: 1000; /* تأكد من أن القائمة فوق جميع العناصر الأخرى */
 }
 
+/* إظهار القائمة عند التفعيل */
+.menu.show {
+    transform: translateX(0);
+}
+
+/* إخفاء القائمة عند إغلاقها */
+.menu.hide {
+    transform: translateX(100%);
+}
+
+/* تنسيق عناصر القائمة */
 .menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
 }
 
-.menu ul li {
-    margin: 10px 0;
+.menu li {
+    margin: 15px 0; /* مسافة بين العناصر */
 }
 
-.menu ul li a {
-    color: #00ff00;
+.menu a {
+    color: white;
     text-decoration: none;
-    
+    font-size: 18px;
     font-weight: bold;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-.menu ul li a:hover {
-    color: #ff00ff;
+.menu a:hover {
+    color: #ffcc00; /* تغيير لون النص عند التمرير */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: #ffcc00; /* لون الشريط أسفل الرابط */
+    transform: scaleX(0); /* بدء الشريط مخفياً */
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
 }
 
-@keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-20px); }
+.menu a:hover::before {
+    transform: scaleX(1); /* إظهار الشريط عند التمرير */
+    transform-origin: bottom left;
 }
 
-.menu.show {
+/* تنسيق الـ burger menu */
+.burger-menu {
+    flex-direction: column;
+    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+    width: 50px;
+    height: 50px;
+    top: 25px;
+    right: 20px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px; /* جعل الزر دائريًا */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: all 0.4s ease, background 0.4s ease; /* تحسين الانتقالات */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* تغيير التدرج عند التمرير فوق الزر */
+.burger-menu.active {
+    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+    transform: scale(1.1); /* تكبير الزر عند التمرير */
+}
+
+/* تنسيق خطوط الـ burger menu */
+.burger-menu span {
     display: block;
-    animation: fadeIn 0.5s ease forwards;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    transition: transform 0.3s ease;
 }
 
-.menu.hide {
-    animation: fadeOut 0.5s ease forwards;
-    display: none;
+/* تفاعل الزر في الوضع الداكن */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px); /* تأثير التدوير */
 }
 
+.burger-menu.active span:nth-child(2) {
+    opacity: 0; /* إخفاء الخط الأوسط */
+}
 
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px); /* تأثير التدوير */
+}
 
-/* Light Theme Styles */
+/* تنسيق الـ Burger Menu للوضع الداكن */
+.dark-theme .burger-menu {
+    background: linear-gradient(45deg, #8b4513, #4b2e2a); /* تدرج لوني بني للوضع الداكن */
+}
+
+/* تنسيق الزر */
 .themeToggle {
-    height: 40px;
-    width:  auto;
-    border: 2px black solid; 
-    border-radius: 10px;
-    background-color: white;
-    
+    top: 30px;
+    right: 100px;
+    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px; /* جعل الزر دائريًا */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: all 0.4s ease, background 0.4s ease; /* تحسين الانتقالات */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    z-index: 999;
 }
+
+/* تغيير التدرج عند التمرير فوق الزر */
+.themeToggle:hover {
+    background-image: linear-gradient(45deg, #ff6347, #ff8c00); /* اللون عند التمرير فوقه */
+    transform: scale(1.1); /* تكبير الزر عند التمرير */
+}
+
+/* تدرج الزر عند التفعيل */
+.themeToggle.active {
+    background-image: linear-gradient(45deg, #ffcc00, #ff5733); /* لون التدرج عند التفعيل */
+    transform: rotate(360deg); /* تدوير الزر عند التفعيل */
+}
+
+/* أنيميشن الرسوميات */
+
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* الأيقونات */
+.icon-sun, .icon-moon {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.5s ease;
+}
+
+.icon-sun {
+    opacity: 0; /* إخفاء الشمس في الوضع الغامق */
+}
+
+body.light-theme .icon-sun {
+    opacity: 1; /* إظهار الشمس في الوضع الفاتح */
+}
+
+body.light-theme .icon-moon {
+    opacity: 0; /* إخفاء القمر في الوضع الفاتح */
+}
+
+/* تفاعل مع المستخدم */
+.themeToggle:focus {
+    outline: none;
+        background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+
+}
+
+.themeToggle::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 50%;
+    transform: translateX(50%);
+    color: #ff8c00;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.themeToggle:hover::after {
+    opacity: 1; /* إظهار الرسالة عند التمرير */
+}
+
+/* تعديل التدرج اللوني لتناسب الثيمات المختلفة */
+body.light-theme .burger-menu,
+body.light-theme .themeToggle {
+    background-image: linear-gradient(45deg, #ff8c00, #ff6347); /* تدرج لوني برتقالي للوضع الفاتح */
+}
+
+body.dark-theme .themeToggle,
+body.dark-theme .burger-menu {
+    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+}
+
 /* General */
 .light-theme {
     background-color: #ffffff;
@@ -174,8 +309,7 @@ header h1 {
 }
 
 .light-theme .menu {
-    background-color: #f5f5f5;
-    border: 2px black solid;
+    background-image: linear-gradient(45deg, #ff8c00, #ff6347); /* تدرج لوني برتقالي للوضع الفاتح */
 }
 
 .light-theme .menu ul li a {
@@ -258,7 +392,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 160px 20px 20px 20px;
     animation: slide-in 1s ease-out;
 }
 
@@ -517,7 +651,6 @@ header h1 {
     max-width: 300px;
     background-color: #333;
     padding: 20px;
-    margin: 5px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
