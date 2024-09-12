@@ -102,3 +102,16 @@ themeToggleBtn.addEventListener('click', () => {
     const isLightTheme = bodyElement.classList.toggle('light-theme');
     bodyElement.classList.toggle('dark-theme', !isLightTheme); // تأكد من التبديل بشكل صحيح
 });
+
+
+
+document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const name = document.querySelector('input[name="name"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const message = document.querySelector('textarea[name="message"]').value;
+        const phoneNumber = '01275753325'; // ضع رقم هاتفك هنا
+        const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+        window.open(whatsappUrl, '_blank');
+    });
