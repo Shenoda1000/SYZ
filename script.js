@@ -107,9 +107,9 @@ themeToggleBtn.addEventListener('click', () => {
 
 document.getElementById('whatsappBtn').addEventListener('click', function(e) {
     e.preventDefault();
-    const name = document.querySelector('input[name="name"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const message = document.querySelector('textarea[name="message"]').value;
+    const name = encodeURIComponent(document.querySelector('input[name="name"]').value);
+    const email = encodeURIComponent(document.querySelector('input[name="email"]').value);
+    const message = encodeURIComponent(document.querySelector('textarea[name="message"]').value);
     const phoneNumber = '201275753325'; // رقم هاتفك مع رمز الدولة
     const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
