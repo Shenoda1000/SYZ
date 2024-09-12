@@ -377,9 +377,76 @@ body.dark-theme .icon-moon {
     color: black;
 }
 
-/* Section Titles */
-.light-theme .section-title::after {
-    background-color: black;
+/* Contact Section - Light Theme */
+.light-theme .contact-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* خلفية فاتحة */
+    color: #333; /* لون النص الداكن */
+    animation: slide-in 1.5s ease-out;
+}
+
+.light-theme .contact-section .section-title {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    color: #333; /* لون داكن للعنوان */
+}
+.light-theme .section-title::after{
+  background-color: black;
+}
+.light-theme .contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+.light-theme .contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.light-theme .contact-form input,
+.light-theme .contact-form textarea {
+    padding: 15px;
+    background-color: #fff; /* خلفية بيضاء للحقول */
+    border: 2px solid #ddd; /* حد فاتح */
+    border-radius: 8px;
+    color: #333; /* لون النص داكن */
+    font-size: 1.1em;
+    outline: none;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.light-theme .contact-form input:focus,
+.light-theme .contact-form textarea:focus {
+    background-color: #f1f1f1; /* خلفية أكثر إشراقًا عند التركيز */
+    border: 2px solid #00ff00; /* تغيير لون الحد عند التركيز */
+}
+
+.light-theme .contact-form button {
+    padding: 15px;
+    background-color: #ffcc33; /* زر بلون برتقالي */
+    border: none;
+    border-radius: 8px;
+    color: #333; /* لون نص داكن */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: slide-in 1.7s ease-out;
+}
+
+.light-theme .contact-form button:hover {
+    background-color: #ffa500; /* زر بلون برتقالي داكن عند التمرير */
+}
+
+/* Responsive Design Adjustments */
+@media(min-width: 768px) {
+    .light-theme .contact-section {
+        padding: 120px 40px;
+    }
 }
 
 
@@ -711,6 +778,79 @@ body.dark-theme .icon-moon {
         width: 100%; /* النص يمتد على كامل عرض العنصر */
     }
 }
+
+
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    animation: slide-in 1.5s ease-out;
+}
+
+.contact-section .section-title {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    background-color: #444;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.1em;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: #555;
+}
+
+.contact-form button {
+    padding: 15px;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: slide-in 1.7s ease-out;
+}
+
+.contact-form button:hover {
+    background-color: #ffcc00;
+}
+
+@media(min-width: 768px) {
+    .contact-section {
+        padding: 120px 40px;
+    }
+}
+
+
+
+
 /* Footer */
 footer {
     text-align: center;
