@@ -13,6 +13,39 @@ function toggleMenu() {
     burger.classList.toggle('active');
 }
 
+
+
+// إغلاق القائمة عند الضغط خارجها
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('menu');
+    const burger = document.querySelector('.burger-menu');
+    const isClickInside = menu.contains(event.target) || burger.contains(event.target);
+    
+    if (!isClickInside && menu.classList.contains('show')) {
+        closeMenu();
+    }
+});
+
+function closeMenu() {
+    const menu = document.getElementById('menu');
+    const burger = document.querySelector('.burger-menu');
+    if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+        menu.classList.add('hide');
+    }
+    burger.classList.remove('active');
+}
+
+function scrollToSection(sectionId) {
+    // التمرير للأعلى بسرعة
+    window.scrollTo({
+        top: document.querySelector(sectionId).offsetTop,
+        behavior: 'smooth'
+    });
+    
+    closeMenu();
+}
+
 // إغلاق القائمة عند الضغط خارجها
 document.addEventListener('click', function(event) {
     const menu = document.getElementById('menu');
@@ -62,8 +95,10 @@ window.addEventListener('scroll', function() {
 
 // التبديل بين الوضع الفاتح والداكن
 const themeToggleBtn = document.getElementById('themeToggle');
+const burgerMenu = document.querySelector('.burger-menu');
 const bodyElement = document.body;
 
 themeToggleBtn.addEventListener('click', () => {
-    bodyElement.classList.toggle('light-theme');
+    const isLightTheme = bodyElement.classList.toggle('light-theme');
+    bodyElement.classList.toggle('dark-theme', !isLightTheme); // تأكد من التبديل بشكل صحيح
 });
