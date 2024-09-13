@@ -679,7 +679,7 @@ body.dark-theme .icon-moon {
 
 /* Section Styling */
 .skills-section {
-    padding: 60px 20px;
+    padding: 60px 5px;
     background-color: #282828;
     text-align: center;
     border-top: 5px solid #00ff00;
@@ -722,9 +722,9 @@ body.dark-theme .icon-moon {
     justify-content: flex-start; /* لضمان أن الصورة والنص يكونان في خط أفقي */
     align-items: center; /* لتوسيط الصورة والنص رأسياً */
     width: 100%;
-    max-width: 300px;
+    max-width:250px;
     background-color: #333;
-    padding: 20px;
+    padding: 20px 10px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
