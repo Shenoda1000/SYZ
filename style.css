@@ -589,6 +589,99 @@ input:checked + .slider:before {
     background-color: #ff00ff;
 }
 
+/* تصميم الاسم */
+/* تصميم الاسم */
+/* تصميم الاسم */
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #00b09b;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.light-theme .name{
+    color: #000;
+}
+/* النص التالي بعد الاسم */
+.description {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* تأثير الكتابة والمسح */
+.job-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1em;
+    color: #007acc;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 15ch;  /* تحديد العرض لتجنب تغيير العرض أثناء الكتابة */
+    border-right: 3px solid #007acc;
+    animation: typing 4s steps(12) infinite, blink 0.8s step-end infinite;
+}
+.light-theme .job-title{
+    color: orange;
+}
+
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 12ch;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #007acc;
+    }
+}
+
+
+/* التحكم في حجم الصورة */
+.profile-pic {
+    width: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* تحسين حجم الصورة للشاشات الكبيرة والصغيرة */
+@media (min-width: 1200px) {
+    .profile-pic {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 80%;
+    }
+
+    .name {
+        font-size: 2.5em;
+    }
+
+    .description {
+        font-size: 1.1em;
+    }
+
+    .job-title {
+        font-size: 1.3em;
+    }
+}
 /* Projects Section */
 /* الكود الحالي */
 
