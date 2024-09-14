@@ -64,13 +64,14 @@ header h1 {
 /* تنسيق القائمة الجانبية (Burger Menu) */
 /* تنسيق القائمة الجانبية (Burger Menu) */
 /* القائمه */
+/* قائمة التنقل */
 .menu {
     position: fixed;
     top: 0;
     right: 0;
     width: 300px; /* عرض القائمة */
     height: 100vh; /* ارتفاع القائمة ليغطي الشاشة بالكامل */
-    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+    background-image: linear-gradient(45deg, #004d40, #00796b); /* تدرج أزرق مائل للأخضر */
     color: white;
     transform: translateX(100%); /* بدء القائمة مخفية خارج الشاشة */
     transition: transform 0.3s ease-in-out, background 0.4s ease; /* تحسين الانتقال */
@@ -79,8 +80,18 @@ header h1 {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* ظل للقائمة */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* ظل للقائمة مع وضوح أكبر */
     z-index: 1000; /* تأكد من أن القائمة فوق جميع العناصر الأخرى */
+    border-radius: 10px 0 0 10px; /* حواف دائرية للقائمة */
+}
+
+/* عنوان القائمة */
+.menu-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+    color: #ffd54f; /* لون العنوان */
 }
 
 /* إظهار القائمة عند التفعيل */
@@ -99,41 +110,53 @@ header h1 {
     padding: 0;
     margin: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* مسافة بين العناصر */
 }
 
 .menu li {
-    margin: 15px 0; /* مسافة بين العناصر */
+    width: 100%;
 }
 
 .menu a {
+    display: block;
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 10px 20px; /* إضافة مسافة حول النص */
+    border-radius: 8px; /* زوايا دائرية للعناصر */
+    transition: background 0.3s ease, color 0.3s ease;
     position: relative;
-    transition: color 0.3s ease;
 }
 
+/* تباين خلفية العناصر عند التمرير */
 .menu a:hover {
-    color: #ffcc00; /* تغيير لون النص عند التمرير */
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة عند التمرير */
+    color: #ffd54f; /* تغيير لون النص عند التمرير */
 }
 
-.menu a::before {
+/* إضافة تأثيرات إضافية عند التمرير */
+.menu a:hover::before {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: 0;
     width: 100%;
-    height: 3px;
-    background: #ffcc00; /* لون الشريط أسفل الرابط */
-    transform: scaleX(0); /* بدء الشريط مخفياً */
+    height: 4px;
+    background: #ffd54f; /* لون الشريط أسفل الرابط */
+    transform: scaleX(1); /* إظهار الشريط عند التمرير */
     transition: transform 0.3s ease;
-    transform-origin: bottom right;
 }
 
-.menu a:hover::before {
-    transform: scaleX(1); /* إظهار الشريط عند التمرير */
-    transform-origin: bottom left;
+/* إضافة تباين بين الروابط باستخدام حدود */
+.menu a:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1); /* خلفية مختلفة لكل عنصر زوجي */
+}
+
+.menu a:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2); /* خلفية مختلفة لكل عنصر فردي */
 }
 
 /* إزاحة الصفحة عند فتح القائمة */
@@ -394,7 +417,8 @@ input:checked + .slider:before {
 .light-theme .skills-section {
     background-color: #f1f1f1;
     color: #000;
-    border: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .light-theme .skill-item {
@@ -801,35 +825,35 @@ input:checked + .slider:before {
     }
 }
 
+
 /* Section Styling */
 .skills-section {
     padding: 60px 20px;
-    background-color: #282828;
+    background-color: #282828; /* اللون الداكن */
     text-align: center;
-    border-top: 5px solid #00ff00;
+    border-top: 5px solid #00ff00; /* Neon green */
     border-bottom: 5px solid #00ff00;
+    position: relative;
 }
 
 .section-title {
-    font-size: 1.8rem;
+    font-size: 2rem; /* حجم الخط على الشاشات الكبيرة */
     margin-bottom: 40px;
     color: #00ff00; /* Neon green */
     text-transform: uppercase;
     position: relative;
+    font-family: 'Roboto', sans-serif;
 }
 
 .section-title::after {
     content: '';
     display: block;
-    width: 50px;
-    height: 4px;
+    width: 60px; /* عرض الخط السفلي */
+    height: 5px; /* ارتفاع الخط السفلي */
     background-color: #00ff00;
     margin: 20px auto 0;
+    border-radius: 5px; /* زوايا دائرية للخط السفلي */
 }
-
-
-
-
 
 /* Skill Grid Styling */
 .skills-grid {
@@ -837,73 +861,119 @@ input:checked + .slider:before {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     justify-items: center;
-    
 }
 
 /* Skill Item Styling */
 .skill-item {
     display: flex;
-    justify-content: flex-start; /* لضمان أن الصورة والنص يكونان في خط أفقي */
-    align-items: center; /* لتوسيط الصورة والنص رأسياً */
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 300px;
     background-color: #333;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px; /* زوايا دائرية للعنصر */
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center; /* لجعل النص يبدأ من اليسار */
-    border: #00ff00 2px solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    border: 2px solid #00ff00; /* إطار بألوان النيون */
 }
 
 .skill-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background-color: #444;
 }
 
 /* Skill Icon Styling */
 .skill-icon {
-    width: 15%; /* تأخذ الصورة 25% من عرض العنصر */
+    width: 20%; /* تعديل الحجم لتناسب النصوص والأيقونات */
 }
 
 .skill-icon img {
-    width: 100%; /* تتناسب الصورة مع المساحة المخصصة */
+    width: 100%;
     height: auto;
-    max-width: 50px; /* حجم الصورة القصوى يبقى 50px */
+    max-width: 60px; /* حجم الصورة القصوى */
+    transition: transform 0.3s ease;
+}
+
+.skill-icon img:hover {
+    transform: scale(1.2); /* تكبير الصورة عند التمرير */
 }
 
 /* Skill Text Styling */
 .skill-text {
-    width: 85%; /* النص يأخذ 75% من المساحة المتبقية */
+    width: 80%;
+    padding-left: 15px;
 }
 
 .skill-item h3 {
-    font-size: 1.2rem;
-    margin: 0; /* إزالة الهوامش العلوية والسفلية */
-    color: #00ff00; /* Neon green */
+    font-size: 1.5rem; /* حجم الخط على الشاشات الكبيرة */
+    margin: 0;
+    color: #00ff00;
     text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 480px) {
+.skill-item:hover h3 {
+    color: #ffd700; /* تغيير لون النص عند التمرير */
+}
+
+
+
+/* Responsive Styles */
+@media (min-width: 1200px) {
+    .section-title {
+        font-size: 2.5rem; /* حجم الخط على الشاشات الكبيرة جدًا */
+    }
+
     .skill-item {
-        flex-direction: column; /* تكديس الأيقونة والنص بشكل عمودي */
-        text-align: center;
-        width: 150px;
-    }
-
-    .skill-icon {
-        width: 100%; /* تضع الأيقونة فوق النص */
-        margin-bottom: 10px;
-    }
-
-    .skill-text {
-        width: 100%; /* النص يمتد على كامل عرض العنصر */
+        max-width: 350px; /* توسيع العنصر على الشاشات الكبيرة جدًا */
     }
 }
 
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2rem; /* حجم الخط على الشاشات الكبيرة */
+    }
+}
 
+@media (max-width: 768px) {
+    .skills-grid {
+        gap: 30px;
+    }
+    
+    .skill-item {
+        max-width: 280px;
+    }
+
+    .section-title {
+        font-size: 1.8rem; /* حجم الخط على الشاشات المتوسطة */
+    }
+}
+
+@media (max-width: 576px) {
+    .skill-item {
+        max-width: 260px;
+    }
+
+    .section-title {
+        font-size: 1.6rem; /* حجم الخط على الشاشات الصغيرة */
+    }
+}
+
+@media (max-width: 360px) {
+    .skill-item {
+        max-width: 220px;
+    }
+
+    .section-title {
+        font-size: 1.4rem; /* حجم الخط على الشاشات الصغيرة جدًا */
+    }
+}
 
 /* Contact Section */
 .contact-section {
