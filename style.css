@@ -63,11 +63,12 @@ header h1 {
 
 /* تنسيق القائمة الجانبية (Burger Menu) */
 /* تنسيق القائمة الجانبية (Burger Menu) */
+/* القائمه */
 .menu {
     position: fixed;
     top: 0;
     right: 0;
-    width: 250px; /* عرض القائمة */
+    width: 300px; /* عرض القائمة */
     height: 100vh; /* ارتفاع القائمة ليغطي الشاشة بالكامل */
     background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
     color: white;
@@ -133,6 +134,41 @@ header h1 {
 .menu a:hover::before {
     transform: scaleX(1); /* إظهار الشريط عند التمرير */
     transform-origin: bottom left;
+}
+
+/* إزاحة الصفحة عند فتح القائمة */
+body.menu-open {
+    margin-right: 300px; /* حجم القائمة */
+    overflow: hidden; /* منع التمرير عند فتح القائمة */
+    transition: margin-right 0.3s ease-in-out;
+}
+
+/* جعل القائمه متجاوبه */
+@media (max-width: 768px) {
+    .menu {
+        width: 250px; /* تصغير عرض القائمة للشاشات المتوسطة */
+    }
+    body.menu-open {
+        margin-right: 250px; /* تكييف حجم الإزاحة */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        width: 200px; /* تصغير عرض القائمة للشاشات الصغيرة */
+    }
+    body.menu-open {
+        margin-right: 200px; /* تكييف حجم الإزاحة */
+    }
+}
+
+@media (max-width: 360px) {
+    .menu {
+        width: 180px; /* تصغير عرض القائمة للشاشات الصغيرة جداً */
+    }
+    body.menu-open {
+        margin-right: 180px; /* تكييف حجم الإزاحة */
+    }
 }
 
 /* تنسيق الـ burger menu */
