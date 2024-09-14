@@ -94,13 +94,14 @@ window.addEventListener('scroll', function() {
 
 
 // التبديل بين الوضع الفاتح والداكن
-const themeToggleBtn = document.getElementById('themeToggle');
-const burgerMenu = document.querySelector('.burger-menu');
-const bodyElement = document.body;
+const switchInput = document.getElementById('switch');
+const body = document.body;
 
-themeToggleBtn.addEventListener('click', () => {
-    const isLightTheme = bodyElement.classList.toggle('light-theme');
-    bodyElement.classList.toggle('dark-theme', !isLightTheme); // تأكد من التبديل بشكل صحيح
+// عندما يتم تغيير حالة الـ switch
+switchInput.addEventListener('change', () => {
+    // تبديل الثيم
+    body.classList.toggle('light-theme');
+    body.classList.toggle('dark-theme');
 });
 
 
