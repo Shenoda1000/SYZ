@@ -188,113 +188,108 @@ header h1 {
 
 /* تنسيق الـ Burger Menu للوضع الداكن */
 .dark-theme .burger-menu {
-    background: linear-gradient(45deg, #8b4513, #4b2e2a); /* تدرج لوني بني للوضع الداكن */
-}
-
-/* تنسيق الزر */
-.themeToggle {
-    top: 30px;
-    right: 100px;
-    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 50px; /* جعل الزر دائريًا */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: all 0.4s ease, background 0.4s ease; /* تحسين الانتقالات */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    overflow: hidden;
-    z-index: 999;
-}
-
-/* تغيير التدرج عند التمرير فوق الزر */
-.themeToggle:hover {
-    background-image: linear-gradient(45deg, #ff6347, #ff8c00); /* اللون عند التمرير فوقه */
-    transform: scale(1.1); /* تكبير الزر عند التمرير */
-}
-
-/* تدرج الزر عند التفعيل */
-.themeToggle.active {
-    background-image: linear-gradient(45deg, #ffcc00, #ff5733); /* لون التدرج عند التفعيل */
-    transform: rotate(360deg); /* تدوير الزر عند التفعيل */
-}
-
-/* أنيميشن الرسوميات */
-
-
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-/* الأيقونات */
-.icon-sun, .icon-moon {
-    width: 30px;
-    height: 30px;
-    transition: opacity 0.5s ease;
-}
-.icon-moon {
-  filter: invert(1);
-}
-.icon-sun {
-    opacity: 0; /* إخفاء الشمس في الوضع الغامق */
-}
-
-body.light-theme .icon-sun {
-    opacity: 1; /* إظهار الشمس في الوضع الفاتح */
-}
-
-body.light-theme .icon-moon {
-    opacity: 0; /* إخفاء القمر في الوضع الفاتح */
-}
-
-/* تفاعل مع المستخدم */
-.themeToggle:focus {
-    outline: none;
-        background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
-
-}
-
-.themeToggle::after {
-    content: '';
-    position: absolute;
-    top: -30px;
-    right: 50%;
-    transform: translateX(50%);
-    color: #ff8c00;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.themeToggle:hover::after {
-    opacity: 1; /* إظهار الرسالة عند التمرير */
-}
-
-/* تعديل التدرج اللوني لتناسب الثيمات المختلفة */
-body.light-theme .burger-menu,
-body.light-theme .themeToggle {
     background-image: linear-gradient(45deg, #ff8c00, #ff6347); /* تدرج لوني برتقالي للوضع الفاتح */
 }
 
-body.dark-theme .themeToggle,
-body.dark-theme .burger-menu {
-    background-image: linear-gradient(45deg, #00b09b, #96c93d); /* تدرج أخضر */
+/* تنسيق الزر */
+/* CSS للـ switch */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  overflow: hidden;
 }
-body.dark-theme .icon-moon {
-  filter: invert(1);
+
+/* إخفاء الـ checkbox الافتراضي */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
+
+/* أنماط slider */
+.slider {
+  --background: #20262c;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 1.5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  left: 10px;
+  bottom: 10px;
+  box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+.decoration {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  right: 20%;
+  top: 15%;
+  background: #e5f041e6;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s;
+  box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+    -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+/* تفاعل عند تفعيل الـ switch */
+input:checked ~ .decoration {
+  transform: translateX(-20px);
+  width: 10px;
+  height: 10px;
+  background: white;
+  box-shadow: -12px 0 0 white, -6px 0 0 1.6px white, 5px 15px 0 1px white,
+    1px 17px 0 white, 10px 17px 0 white;
+}
+
+input:checked + .slider {
+  background-color: #5494de;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
+}
+
+/* تعديل الألوان عند التمرير فوق الـ label */
+.switch:hover {
+  background-image: linear-gradient(45deg, #ff6347, #ff8c00); /* اللون عند التمرير فوقه */
+  transform: scale(1.1); /* تكبير عند التمرير */
+}
+
+/* تأثير عند تفعيل الـ switch */
+.switch input:checked + .slider {
+  background-image: linear-gradient(45deg, #ffcc00, #ff5733); /* لون التدرج عند التفعيل */
+  transform: rotate(360deg); /* تدوير عند التفعيل */
+}
+
+/* أنيميشن الأيقونات */
+
+
 /* General */
 .light-theme {
     background-color: #ffffff;
@@ -679,7 +674,7 @@ body.dark-theme .icon-moon {
 
 /* Section Styling */
 .skills-section {
-    padding: 60px 5px;
+    padding: 60px 20px;
     background-color: #282828;
     text-align: center;
     border-top: 5px solid #00ff00;
@@ -722,9 +717,9 @@ body.dark-theme .icon-moon {
     justify-content: flex-start; /* لضمان أن الصورة والنص يكونان في خط أفقي */
     align-items: center; /* لتوسيط الصورة والنص رأسياً */
     width: 100%;
-    max-width:250px;
+    max-width: 300px;
     background-color: #333;
-    padding: 20px 10px;
+    padding: 20px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
