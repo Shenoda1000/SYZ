@@ -77,7 +77,10 @@ function scrollToSection(sectionId) {
     closeMenu();
 }
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    const jobTitleElement = document.querySelector('.job-title');
+    jobTitleElement.textContent = "Front-End";
+});
 
 window.addEventListener('scroll', function() {
     const skillsSection = document.getElementById('skills');
